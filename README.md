@@ -1,7 +1,7 @@
 laravel-schema-extend
 =====================
 
-- support MySQL column comment.
+- support MySQL 'column comment' and 'table comment'.
 - 让 laravel 的 Schema 支持 MySQL “列注释”和“表注释”。
 
 ---
