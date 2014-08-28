@@ -13,27 +13,33 @@ class Facade extends \Illuminate\Support\Facades\Facade
     {
         $connection = static::$app['db']->connection($name);
 
-        # 仅针对 MySqlGrammar
-        if (
-            get_class($connection) === 'Illuminate\Database\MySqlConnection'
-            && is_null($connection->getSchemaGrammar())
-        ) {
-            $MySqlGrammar = $connection->withTablePrefix(new MySqlGrammar);
-            $connection->setSchemaGrammar($MySqlGrammar);
-        }
+        static::useCustomGrammar($connection);
         
         return $connection->getSchemaBuilder();
     }
 
     /**
-     * Get the registered name of the component.
+     * Get a schema builder.
      *
-     * @return string
+     * @return \Illuminate\Database\Schema\Builder
      */
     protected static function getFacadeAccessor()
     {
         $connection = static::$app['db']->connection();
 
+        static::useCustomGrammar($connection);
+        
+        return $connection->getSchemaBuilder();
+    }
+
+    /**
+     * 引导系统调用我们自定义的 Grammar
+     *
+     * @param  object  $connection \Illuminate\Database\Connection
+     * @return string
+     */
+    protected static function useCustomGrammar(&$connection)
+    {
         # 仅针对 MySqlGrammar
         if (
             get_class($connection) === 'Illuminate\Database\MySqlConnection'
@@ -42,8 +48,6 @@ class Facade extends \Illuminate\Support\Facades\Facade
             $MySqlGrammar = $connection->withTablePrefix(new MySqlGrammar);
             $connection->setSchemaGrammar($MySqlGrammar);
         }
-        
-        return $connection->getSchemaBuilder();
     }
 
 }
