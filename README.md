@@ -29,3 +29,11 @@ laravel-schema-extend
         'Schema'    => 'FiveSay\LaravelSchemaExtend\Facade',
     ),
 ```
+
+## 使用方法
+
+```php
+    Schema::create('tests', function ($table) {
+        $table->increments('id')->comment('测试注释信息');
+    });
+```
