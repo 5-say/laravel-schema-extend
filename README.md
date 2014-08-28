@@ -2,7 +2,7 @@ laravel-schema-extend
 =====================
 
 - support MySQL column comment.
-- 让 laravel 的 Schema 支持 MySQL 列注释。
+- 让 laravel 的 Schema 支持 MySQL “列注释”和“表注释”。
 
 ---
 
@@ -20,7 +20,7 @@ laravel-schema-extend
 "five-say/laravel-schema-extend": "1.*"
 ```
 
-在 `/app/config/app.php` 中设置“别名”
+在 `/app/config/app.php` 中替换“别名”
 
 ```php
 'aliases' => array(
@@ -34,6 +34,7 @@ laravel-schema-extend
 
 ```php
 Schema::create('tests', function ($table) {
-    $table->increments('id')->comment('测试注释信息');
+    $table->increments('id')->comment('列注释');
+    $table->comment = '表注释';
 });
 ```

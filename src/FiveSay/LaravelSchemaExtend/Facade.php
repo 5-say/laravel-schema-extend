@@ -12,10 +12,7 @@ class Facade extends \Illuminate\Support\Facades\Facade
     public static function connection($name)
     {
         $connection = static::$app['db']->connection($name);
-
-        static::useCustomGrammar($connection);
-        
-        return $connection->getSchemaBuilder();
+        return static::useCustomGrammar($connection);
     }
 
     /**
@@ -26,25 +23,23 @@ class Facade extends \Illuminate\Support\Facades\Facade
     protected static function getFacadeAccessor()
     {
         $connection = static::$app['db']->connection();
-
-        static::useCustomGrammar($connection);
-        
-        return $connection->getSchemaBuilder();
+        return static::useCustomGrammar($connection);
     }
 
     /**
      * 引导系统调用我们自定义的 Grammar
      *
      * @param  object  $connection \Illuminate\Database\Connection
-     * @return string
+     * @return \Illuminate\Database\Schema\Builder
      */
-    protected static function useCustomGrammar(&$connection)
+    protected static function useCustomGrammar($connection)
     {
         # 仅针对 MySqlGrammar
         if (get_class($connection) === 'Illuminate\Database\MySqlConnection') {
             $MySqlGrammar = $connection->withTablePrefix(new MySqlGrammar);
             $connection->setSchemaGrammar($MySqlGrammar);
         }
+        return $connection->getSchemaBuilder();
     }
 
 }
