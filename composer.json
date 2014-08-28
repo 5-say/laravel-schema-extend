@@ -1,0 +1,23 @@
+{
+    "name": "five-say/laravel-schema-extend",
+    "description": "",
+    "authors": [
+        {
+            "name": "FiveSay",
+            "email": "bcw.5@foxmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "FiveSay\\LaravelSchemaExtend\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
