@@ -41,10 +41,7 @@ class Facade extends \Illuminate\Support\Facades\Facade
     protected static function useCustomGrammar(&$connection)
     {
         # 仅针对 MySqlGrammar
-        if (
-            get_class($connection) === 'Illuminate\Database\MySqlConnection'
-            && is_null($connection->getSchemaGrammar())
-        ) {
+        if (get_class($connection) === 'Illuminate\Database\MySqlConnection') {
             $MySqlGrammar = $connection->withTablePrefix(new MySqlGrammar);
             $connection->setSchemaGrammar($MySqlGrammar);
         }
