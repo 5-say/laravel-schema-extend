@@ -17,23 +17,23 @@ laravel-schema-extend
 在 composer.json 文件中申明依赖：
 
 ```json
-    "five-say/laravel-schema-extend": "1.*"
+"five-say/laravel-schema-extend": "1.*"
 ```
 
 在 `/app/config/app.php` 中设置“别名”
 
 ```php
-    'aliases' => array(
-        ...
-        // 'Schema' => 'Illuminate\Support\Facades\Schema',
-        'Schema'    => 'FiveSay\LaravelSchemaExtend\Facade',
-    ),
+'aliases' => array(
+    ...
+    // 'Schema' => 'Illuminate\Support\Facades\Schema',
+    'Schema'    => 'FiveSay\LaravelSchemaExtend\Facade',
+),
 ```
 
 ## 使用方法
 
 ```php
-    Schema::create('tests', function ($table) {
-        $table->increments('id')->comment('测试注释信息');
-    });
+Schema::create('tests', function ($table) {
+    $table->increments('id')->comment('测试注释信息');
+});
 ```
