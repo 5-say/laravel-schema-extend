@@ -1,6 +1,7 @@
 {
     "name": "five-say/laravel-schema-extend",
     "description": "support MySQL 'column comment' and 'table comment'.",
+    "keywords": ["laravel", "schema", "mysql", "comment"],
     "authors": [
         {
             "name": "FiveSay",
