@@ -49,3 +49,8 @@ Schema::create('tests', function ($table) {
     $table->comment = '表注释';
 });
 ```
+
+## 致谢
+
+- [ghostboyzone](https://github.com/ghostboyzone)
+- [xuhuan](https://github.com/xuhuan)
