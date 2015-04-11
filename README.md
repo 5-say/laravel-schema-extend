@@ -15,9 +15,21 @@ laravel-schema-extend
 
 在 composer.json 文件中申明依赖：
 
+* support laravel 4.1.*
 ```json
 "five-say/laravel-schema-extend": "1.*"
 ```
+
+* support laravel 4.2.*
+```json
+"five-say/laravel-schema-extend": "2.*"
+```
+
+* support laravel 5.0.*
+```json
+"five-say/laravel-schema-extend": "3.*"
+```
+
 
 在配置文件 `config/app.php` 中替换“别名”
 
