@@ -7,8 +7,7 @@ laravel-schema-extend
 ---
 
 > **不会对官方源码照成任何影响。**  
-> 随官方源码的更新，自动保持最新。  
-> 官方后期若更新了新的功能，您都还可以正常使用。
+> 继承原生 schema，随源码更新。  
 
 
 ## 使用前的准备
@@ -20,12 +19,12 @@ laravel-schema-extend
 "five-say/laravel-schema-extend": "1.*"
 ```
 
-* support laravel 4.2.*
+* support laravel 4.2.*（官方已支持 MySQL “列注释”，需要“表注释”的朋友还可以继续使用此插件）
 ```json
 "five-say/laravel-schema-extend": "2.*"
 ```
 
-* support laravel 5.0.*
+* support laravel 5.0.*（官方已支持 MySQL “列注释”，需要“表注释”的朋友还可以继续使用此插件）
 ```json
 "five-say/laravel-schema-extend": "3.*"
 ```
@@ -54,3 +53,4 @@ Schema::create('tests', function ($table) {
 
 - [ghostboyzone](https://github.com/ghostboyzone)
 - [xuhuan](https://github.com/xuhuan)
+- [xiaobeicn](https://github.com/xiaobeicn)
