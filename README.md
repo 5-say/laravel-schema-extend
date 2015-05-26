@@ -7,7 +7,7 @@ laravel-schema-extend
 ---
 
 > **不会对官方源码照成任何影响。**  
-> 继承随官方 schema，随源码更新。  
+> 继承原生 schema，随源码更新。  
 
 
 ## 使用前的准备
@@ -54,3 +54,4 @@ Schema::create('tests', function ($table) {
 - [ghostboyzone](https://github.com/ghostboyzone)
 - [xuhuan](https://github.com/xuhuan)
 - [xiaobeicn](https://github.com/xiaobeicn)
+
